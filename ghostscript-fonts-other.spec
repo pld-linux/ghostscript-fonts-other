@@ -2,7 +2,7 @@ Summary:	Additional ghostscript fonts
 Summary(pl):	Dodatkowe fonty dla interpretera ghostscript
 Name:		ghostscript-fonts-other
 Version:	5.50
-Release:	2
+Release:	3
 Group:		Applications/Graphics
 Group(pl):	Aplikacje/Grafika
 License:	GPL
@@ -11,6 +11,7 @@ Source0:	%{name}-%{version}.tar.gz
 Requires:	ghostscript
 Prereq:		/usr/bin/type1inst
 Requires:	type1inst >= 0.6.1
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
