@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/gnu-gs-fonts-other-%{version}.tar.gz
+# Source0-md5:	33457d3f37de7ef03d2eea05a9e6aa4f
 Source1:	%{name}.Fontmap
 Source2:	%{name}.fonts.scale
 URL:		http://www.cs.wisc.edu/~ghost/
