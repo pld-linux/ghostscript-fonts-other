@@ -2,7 +2,7 @@ Summary:	Additional ghostscript fonts
 Summary(pl):	Dodatkowe fonty dla interpretera ghostscript
 Name:		ghostscript-fonts-other
 Version:	5.50
-Release:	3
+Release:	4
 Group:		Applications/Graphics
 Group(pl):	Aplikacje/Grafika
 License:	GPL
@@ -41,17 +41,17 @@ rm -rf fonts
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_datadir}/fonts/Type1
-cp fonts/* $RPM_BUILD_ROOT/%{_datadir}/fonts/Type1
+install -d $RPM_BUILD_ROOT/%{_datadir}/fonts/type1
+cp fonts/* $RPM_BUILD_ROOT/%{_datadir}/fonts/type1
 
 %post
-cd %{_datadir}/fonts/Type1
+cd %{_datadir}/fonts/type1
 /usr/bin/type1inst -nolog
 
 %postun
-cd %{_datadir}/fonts/Type1
+cd %{_datadir}/fonts/type1
 /usr/bin/type1inst -nolog
 
 %files
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_datadir}/fonts/Type1/*
+%attr(644,root,root) %{_datadir}/fonts/type1/*
