@@ -1,16 +1,16 @@
 Summary:	Additional ghostscript fonts
 Summary(pl):	Dodatkowe fonty dla interpretera ghostscript
 Name:		ghostscript-fonts-other
-Version:	5.50
-Release:	5
+Version:	6.0
+Release:	1
 License:	GPL
 Group:		Applications/Graphics
 Group(de):	Applikationen/Grafik
 Group(pl):	Aplikacje/Grafika
-URL:		http://www.cs.wisc.edu/~ghost/
-Source0:	%{name}-%{version}.tar.gz
+Source0:	ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/gnu-gs-fonts-other-%{version}.tar.gz
 Source1:	%{name}.Fontmap
 Source2:	%{name}.fonts.scale
+URL:		http://www.cs.wisc.edu/~ghost/
 BuildRequires:	t1utils
 Requires:	ghostscript
 Prereq:		textutils
@@ -39,7 +39,7 @@ PostScript i PDF na szereg postaci wyj¶ciowych: drukarki (w³±czaj±c
 kolorowe), okno X-Window i popularne formaty graficzne.
 
 %prep
-%setup -q -c
+%setup -q -n fonts
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -61,7 +61,6 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_t1fontsdir}/fonts.scale.%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-rm -rf fonts
 
 %post
 cd %{_t1fontsdir}
