@@ -10,8 +10,9 @@ Source1:	%{name}.Fontmap
 Source2:	%{name}.fonts.scale
 URL:		http://www.cs.wisc.edu/~ghost/
 BuildRequires:	t1utils
-PreReq:		sed
-PreReq:		textutils
+Requires(post,postun):	fileutils
+Requires(post,postun):	sed
+Requires(post,postun):	textutils
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -60,6 +61,7 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_t1fontsdir}/fonts.scale.%{name}
 rm -rf $RPM_BUILD_ROOT
 
 %post
+umask 022
 cd %{_t1fontsdir}
 rm -f fonts.scale.bak Fontmap.bak
 cat fonts.scale.* | sort -u > fonts.scale.tmp
@@ -70,6 +72,7 @@ ln -sf fonts.scale fonts.dir
 cat Fontmap.* > Fontmap
 
 %postun
+umask 022
 cd %{_t1fontsdir}
 rm -f fonts.scale.bak Fontmap.bak
 cat fonts.scale.* 2>/dev/null | sort -u > fonts.scale.tmp
