@@ -2,14 +2,16 @@ Summary:	Additional ghostscript fonts
 Summary(pl):	Dodatkowe fonty dla interpretera ghostscript
 Name:		ghostscript-fonts-other
 Version:	5.50
-Release:	1
+Release:	2
 Group:		Applications/Graphics
 Group(pl):	Aplikacje/Grafika
 License:	GPL
 URL:		http://www.cs.wisc.edu/~ghost/
 Source0:	%{name}-%{version}.tar.gz
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	ghostscript
+Prereq:		/usr/bin/type1inst
+Requires:	type1inst >= 0.6.1
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This package contains additional fonts for ghostscript.
@@ -38,10 +40,17 @@ rm -rf fonts
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_datadir}/ghostscript/fonts
-cp fonts/* $RPM_BUILD_ROOT/%{_datadir}/ghostscript/fonts
+install -d $RPM_BUILD_ROOT/%{_datadir}/fonts/Type1
+cp fonts/* $RPM_BUILD_ROOT/%{_datadir}/fonts/Type1
+
+%post
+cd %{_datadir}/fonts/Type1
+/usr/bin/type1inst -nolog
+
+%postun
+cd %{_datadir}/fonts/Type1
+/usr/bin/type1inst -nolog
 
 %files
 %defattr(644,root,root,755)
-%dir %{_datadir}/ghostscript/fonts
-%attr(644,root,root) %{_datadir}/ghostscript/fonts/*
+%attr(644,root,root) %{_datadir}/fonts/Type1/*
