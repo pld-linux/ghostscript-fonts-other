@@ -1,0 +1,192 @@
+% The following notice accompanied the Utopia font:
+%
+%   Permission to use, reproduce, display and distribute the listed
+%   typefaces is hereby granted, provided that the Adobe Copyright notice
+%   appears in all whole and partial copies of the software and that the
+%   following trademark symbol and attribution appear in all unmodified
+%   copies of the software:
+%
+%           Copyright (c) 1989 Adobe Systems Incorporated
+%           Utopia (R)
+%           Utopia is a registered trademark of Adobe Systems Incorporated
+%
+%   The Adobe typefaces (Type 1 font program, bitmaps and Adobe Font
+%   Metric files) donated are:
+%
+%           Utopia Regular
+%           Utopia Italic
+%           Utopia Bold
+%           Utopia Bold Italic
+
+/Utopia-Regular		(putr.pfb)	;
+/Utopia-Italic		(putri.pfb)	;
+/Utopia-Bold		(putb.pfb)	;
+/Utopia-BoldItalic	(putbi.pfb)	;
+
+% 
+%
+% Fonts contributed by URW GmbH for distribution under the GNU License.
+% The following notice accompanied these fonts:
+%
+% U004006T URW Grotesk 2031 Bold PostScript Type 1 Font Program
+% U003043T URW Antiqua 2051 Regular Condensed PostScript Type 1 Font Program
+%
+% Copyright (c) 1992 URW GmbH, Hamburg, Germany
+%
+% This program is free software; you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation; either version 2 of the License, or
+% (at your option) later version.
+%
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; wihtout even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+% See the GNU General Public License for more details.
+%
+% You should have received a copy of the GNU General Public License
+% along with this program; if not, write to the Free Software
+% Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111 U.S.A.
+%
+% Address:
+% URW GmbH
+% PC Support
+% Harksheider Strasse 102
+% 2000 Hamburg 65
+% Germany
+% Phone: +49 40 60 60 50       (Reception)
+% Phone: +49 40 60 60 52 30   (PC Support)
+% Fax    : +49 40 60 60 52 52
+%
+
+/URWAntiquaT-RegularCondensed	(u003043t.gsf)	;
+/URWGroteskT-Bold		(u004006t.gsf)	;
+
+% 
+%
+% Shareware Kana fonts.  These are subject to the following notice:
+%
+% These copyrighted fonts were developed by Kevin Hartig. Permission is
+% granted to freely distribute them in entirety along with this statement.
+% This is shareware. If you decide to use these fonts please contribute
+% $10 US to help support further freeware and shareware software development.
+% Questions and comments may be sent to:
+%
+% hartig@fsl.noaa.gov
+% khartig@nyx.cs.du.edu
+%
+% Kevin Hartig
+% 1126 Collyer Street
+% Longmont, CO 80501 USA
+% 
+% copyright 1993.
+
+% Hiragana and Katakana fonts.  The character names are inappropriate,
+% and the encoding is probably not related to any known standard.
+
+/Calligraphic-Hiragana		(fhirw.gsf)	;
+/Calligraphic-Katakana		(fkarw.gsf)	;
+
+% 
+%
+% Public-domain fonts.  These have no copyright, and are of unknown quality.
+
+% Cyrillic fonts.  The character names are inappropriate,
+% and the encoding is probably not related to any known standard.
+
+/Shareware-Cyrillic-Regular	(fcyr.gsf)	;
+/Shareware-Cyrillic-Italic	(fcyri.gsf)	;
+
+% Aliases
+/Cyrillic			/Cyrillic-Regular	;
+/Cyrillic-Regular		/Shareware-Cyrillic-Regular	;
+/Cyrillic-Italic		/Shareware-Cyrillic-Italic	;
+
+% 
+%
+% Fonts converted from Hershey outlines.  These are constructed and
+% maintained manually.  These are also in the public domain.
+%
+% The suggested UniqueID's and filenames are constructed differently for
+% these than for the ones above, because of the strange way that the Hershey
+% fonts were constructed.  The scheme for these looks like:
+%
+% 42TTXY0
+%
+% TT = typeface, X = ``class'', Y = variation
+%
+% The typeface names and numbers are listed in fonts.mak.
+%
+% class:
+% 0 = normal			= r
+% 1 = simplex			= s
+% 2 = complex			= c
+% 3 = triplex			= t
+% 4 = duplex			= d
+%
+% variation:
+% 0 = normal			(omitted)
+% 1 = oblique			= o
+% 2 = italic			= i
+% 3 = bold			= b
+% 4 = bold oblique		= bo
+% 5 = bold italic		= bi
+%
+
+% Fonts created by Thomas Wolff <wolff@inf.fu-berlin.de>, by adding
+% accents, accented characters, and various other non-alphabetics
+% to the original Hershey fonts.  These are "freeware", not to be sold.
+
+/Hershey-Gothic-English		(hrger.pfb)	;	% 5066533
+/Hershey-Gothic-German		(hrgrr.pfb)	;
+/Hershey-Gothic-Italian		(hritr.pfb)	; 
+
+/Hershey-Plain-Duplex		(hrpld.pfb)	;
+/Hershey-Plain-Duplex-Italic	(hrpldi.pfb)	;
+/Hershey-Plain-Triplex		(hrplt.pfb)	;
+/Hershey-Plain-Triplex-Italic	(hrplti.pfb)	;
+
+/Hershey-Script-Complex		(hrscc.pfb)	;
+/Hershey-Script-Simplex		(hrscs.pfb)	;	% 5066541
+
+% Fonts created algorithmically from the above.
+
+/Hershey-Gothic-English-Bold		(hrgerb.gsf)	;	% 5066542
+/Hershey-Gothic-English-Oblique		(hrgero.gsf)	;
+/Hershey-Gothic-English-SemiBold	(hrgerd.gsf)	;
+/Hershey-Gothic-German-Bold		(hrgrrb.gsf)	;
+/Hershey-Gothic-German-Oblique		(hrgrro.gsf)	;
+/Hershey-Gothic-Italian-Bold		(hritrb.gsf)	;
+/Hershey-Gothic-Italian-Oblique		(hritro.gsf)	;
+
+/Hershey-Plain-Duplex-Bold		(hrpldb.gsf)	;
+/Hershey-Plain-Duplex-Bold-Italic	(hrpldbi.gsf)	;
+/Hershey-Plain-Triplex-Bold		(hrpltb.gsf)	;
+/Hershey-Plain-Triplex-Bold-Italic	(hrpltbi.gsf)	;
+
+/Hershey-Script-Complex-Bold		(hrsccb.gsf)	;
+/Hershey-Script-Complex-Oblique		(hrscco.gsf)	;
+/Hershey-Script-Simplex-Bold		(hrscsb.gsf)	;
+/Hershey-Script-Simplex-Oblique		(hrscso.gsf)	;	% 5066556
+
+% Fonts consisting only of characters from the original Hershey
+% distribution.  These are Type 3 fonts.
+
+/Hershey-Greek-Complex			(hrgkc.gsf)	;	% 5066557
+/Hershey-Greek-Simplex			(hrgks.gsf)	;
+
+/Hershey-Plain				(hrplr.gsf)	;
+/Hershey-Plain-Simplex			(hrpls.gsf)	;	% 5066560
+
+% Fonts created algorithmically from the above.
+
+/Hershey-Plain-Bold			(hrplrb.gsf)	;	% 5066561
+/Hershey-Plain-Bold-Oblique		(hrplrbo.gsf)	;
+/Hershey-Plain-Oblique			(hrplro.gsf)	;
+/Hershey-Plain-Simplex-Bold		(hrplsb.gsf)	;
+/Hershey-Plain-Simplex-Bold-Oblique	(hrplsbo.gsf)	;
+/Hershey-Plain-Simplex-Oblique		(hrplso.gsf)	;	% 5066566
+
+% This font, and only this font among the Hershey fonts, uses
+% the SymbolEncoding.
+
+/Hershey-Symbol				(hrsyr.gsf)	;	% 5066567

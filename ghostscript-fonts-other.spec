@@ -4,20 +4,27 @@ Name:		ghostscript-fonts-other
 Version:	5.50
 Release:	4
 Group:		Applications/Graphics
+Group(de):	Applikationen/Grafik
 Group(pl):	Aplikacje/Grafika
 License:	GPL
 URL:		http://www.cs.wisc.edu/~ghost/
 Source0:	%{name}-%{version}.tar.gz
+Source1:	%{name}.Fontmap
+Source2:	%{name}.fonts.scale
+BuildRequires:	t1utils
 Requires:	ghostscript
-Prereq:		/usr/bin/type1inst
-Requires:	type1inst >= 0.6.1
+Prereq:		textutils
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_t1fontsdir	%{_fontsdir}/Type1
+%define		_t1afmdir	%{_t1fontsdir}/afm
+%define		_t1pfmdir	%{_t1fontsdir}/pfm
 
 %description
 This package contains additional fonts for ghostscript.
 
-Ghostscript is a PostScript interpretor. It can render both PostScript
+Ghostscript is a PostScript interpreter. It can render both PostScript
 and PDF compliant files to devices which include an X window, many
 printer formats (including support for color printers), and popular
 graphics file formats.
@@ -27,31 +34,56 @@ Pakiet ten zawiera dodatkowe fonty dla interpretera ghostscript.
 
 Ghostcript jest interpreterem PostScriptu, jêzyku u¿ywanego do opisu
 formatu dokumentu. Ghostscript potrafi przetworzyæ dokument w formacie
-PostScript i PDF %{name} szereg postaci wyj¶ciowych: drukarki
-(w³±czaj±c kolorowe), okno X-Window i popularne formaty graficzne.
+PostScript i PDF na szereg postaci wyj¶ciowych: drukarki (w³±czaj±c
+kolorowe), okno X-Window i popularne formaty graficzne.
 
 %prep
-install -d fonts
-cd fonts
-gzip -dc %{SOURCE0} | tar xf -
+%setup -c
+
+%install
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT{%{_t1fontsdir},%{_t1afmdir},%{_t1pfmdir}}
+
+install *.gsf $RPM_BUILD_ROOT%{_t1fontsdir}
+install *.afm $RPM_BUILD_ROOT%{_t1afmdir}
+install *.pfm $RPM_BUILD_ROOT%{_t1pfmdir}
+
+# present in t1lib-fonts
+rm -f bch*
+
+for f in *.pfa ; do
+	t1binary $f $RPM_BUILD_ROOT%{_t1fontsdir}/`basename $f .pfa`.pfb
+done
+
+install %{SOURCE1} $RPM_BUILD_ROOT%{_t1fontsdir}/Fontmap.%{name}
+install %{SOURCE2} $RPM_BUILD_ROOT%{_t1fontsdir}/fonts.scale.%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 rm -rf fonts
 
-%install
-rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/%{_datadir}/fonts/type1
-cp fonts/* $RPM_BUILD_ROOT/%{_datadir}/fonts/type1
-
 %post
-cd %{_datadir}/fonts/type1
-/usr/bin/type1inst -nolog
+cd %{_t1fontsdir}
+cat fonts.scale.* | sort -u > fonts.scale.tmp
+wc -l fonts.scale.tmp > fonts.scale
+cat fonts.scale.tmp >> fonts.scale
+rm -f fonts.scale.tmp
+ln -sf fonts.scale fonts.dir
+cat Fontmap.* > Fontmap
 
 %postun
-cd %{_datadir}/fonts/type1
-/usr/bin/type1inst -nolog
+cd %{_t1fontsdir}
+cat fonts.scale.* 2>/dev/null | sort -u > fonts.scale.tmp
+wc -l fonts.scale.tmp > fonts.scale
+cat fonts.scale.tmp >> fonts.scale
+rm -f fonts.scale.tmp
+ln -sf fonts.scale fonts.dir
+cat Fontmap.* > Fontmap 2>/dev/null
 
 %files
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_datadir}/fonts/type1/*
+%{_t1fontsdir}/*.gsf
+%{_t1fontsdir}/*.pfb
+%{_t1afmdir}/*.afm
+%{_t1pfmdir}/*.pfm
+%{_t1fontsdir}/*.%{name}
