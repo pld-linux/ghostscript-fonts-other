@@ -44,8 +44,3 @@ cp fonts/* $RPM_BUILD_ROOT/%{_datadir}/ghostscript/fonts
 %defattr(644,root,root,755)
 %dir %{_datadir}/ghostscript/fonts
 %attr(644,root,root) %{_datadir}/ghostscript/fonts/*
-
-%changelog
-* Fri Jun 18 1999 Artur Wróblewski <wrobell@posexperts.com.pl>
-[5.10-1]
-- FHS-2.0
