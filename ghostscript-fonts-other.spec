@@ -2,7 +2,7 @@ Summary:	Additional ghostscript fonts
 Summary(pl):	Dodatkowe fonty dla interpretera ghostscript
 Name:		ghostscript-fonts-other
 Version:	6.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/gnu-gs-fonts-other-%{version}.tar.gz
@@ -11,8 +11,8 @@ Source1:	%{name}.Fontmap
 Source2:	%{name}.fonts.scale
 URL:		http://www.cs.wisc.edu/~ghost/
 BuildRequires:	t1utils
-Requires(post,postun):	fileutils
-Requires(post,postun):	textutils
+Requires(post,postun):	fontpostinst
+Requires:	%{_fontsdir}/Type1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -61,26 +61,10 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_t1fontsdir}/fonts.scale.%{name}
 rm -rf $RPM_BUILD_ROOT
 
 %post
-umask 022
-cd %{_t1fontsdir}
-rm -f fonts.scale.bak Fontmap.bak
-cat fonts.scale.* | sort -u > fonts.scale.tmp
-cat fonts.scale.tmp | wc -l | tr -d ' ' > fonts.scale
-cat fonts.scale.tmp >> fonts.scale
-rm -f fonts.scale.tmp
-ln -sf fonts.scale fonts.dir
-cat Fontmap.* > Fontmap
+fontpostinst Type1
 
 %postun
-umask 022
-cd %{_t1fontsdir}
-rm -f fonts.scale.bak Fontmap.bak
-cat fonts.scale.* 2>/dev/null | sort -u > fonts.scale.tmp
-cat fonts.scale.tmp | wc -l | tr -d ' ' > fonts.scale
-cat fonts.scale.tmp >> fonts.scale
-rm -f fonts.scale.tmp
-ln -sf fonts.scale fonts.dir
-cat Fontmap.* > Fontmap 2>/dev/null
+fontpostinst Type1
 
 %files
 %defattr(644,root,root,755)
