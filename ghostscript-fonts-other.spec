@@ -8,7 +8,7 @@ Group(pl):	Aplikacje/Grafika
 Copyright:	GPL
 URL:		http://www.cs.wisc.edu/~ghost/
 Source:		%{name}-%{version}.tar.gz
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Requires:	ghostscript
 
 %description
