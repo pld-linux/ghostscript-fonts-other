@@ -1,15 +1,15 @@
-Summary:     Additional ghostscript fonts
-Summary(pl): Dodatkowe fonty dla interpretera ghostscript
-Name:        ghostscript-fonts-other
-Version:     5.10
-Release:     1
-Group:       Applications/Graphics
-Group(pl):   Aplikacje/Grafika
-Copyright:   GPL
-URL:         http://www.cs.wisc.edu/~ghost/
-Source:      %{name}-%{version}.tar.bz2
-BuildRoot:   /tmp/%{name}-%{version}-root
-Requires:    ghostscript
+Summary:	Additional ghostscript fonts
+Summary(pl):	Dodatkowe fonty dla interpretera ghostscript
+Name:		ghostscript-fonts-other
+Version:	5.50
+Release:	1
+Group:		Applications/Graphics
+Group(pl):	Aplikacje/Grafika
+Copyright:	GPL
+URL:		http://www.cs.wisc.edu/~ghost/
+Source:		%{name}-%{version}.tar.gz
+BuildRoot:	/tmp/%{name}-%{version}-root
+Requires:	ghostscript
 
 %description
 This package contains additional fonts for ghostscript.
@@ -30,7 +30,7 @@ X-Window i popularne formaty graficzne.
 %prep
 install -d fonts
 cd fonts
-bzip2 -dc %{SOURCE0} | tar xf -
+gzip -dc %{SOURCE0} | tar xf -
 
 %clean
 rm -rf $RPM_BUILD_ROOT
