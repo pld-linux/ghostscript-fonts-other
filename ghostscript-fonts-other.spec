@@ -5,8 +5,6 @@ Version:	6.0
 Release:	1
 License:	GPL
 Group:		Applications/Graphics
-Group(de):	Applikationen/Grafik
-Group(pl):	Aplikacje/Grafika
 Source0:	ftp://ftp.cs.wisc.edu/ghost/gnu/fonts/gnu-gs-fonts-other-%{version}.tar.gz
 Source1:	%{name}.Fontmap
 Source2:	%{name}.fonts.scale
