@@ -10,9 +10,8 @@ Source1:	%{name}.Fontmap
 Source2:	%{name}.fonts.scale
 URL:		http://www.cs.wisc.edu/~ghost/
 BuildRequires:	t1utils
-Requires:	ghostscript
-Prereq:		textutils
-Prereq:		sed
+PreReq:		sed
+PreReq:		textutils
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
