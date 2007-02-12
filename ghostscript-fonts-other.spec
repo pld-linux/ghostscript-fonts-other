@@ -1,5 +1,5 @@
 Summary:	Additional ghostscript fonts
-Summary(pl):	Dodatkowe fonty dla interpretera ghostscript
+Summary(pl.UTF-8):   Dodatkowe fonty dla interpretera ghostscript
 Name:		ghostscript-fonts-other
 Version:	6.0
 Release:	5
@@ -29,12 +29,12 @@ and PDF compliant files to devices which include an X window, many
 printer formats (including support for color printers), and popular
 graphics file formats.
 
-%description -l pl
+%description -l pl.UTF-8
 Pakiet ten zawiera dodatkowe fonty dla interpretera ghostscript.
 
-Ghostcript jest interpreterem PostScriptu, jêzyku u¿ywanego do opisu
-formatu dokumentu. Ghostscript potrafi przetworzyæ dokument w formacie
-PostScript i PDF na szereg postaci wyj¶ciowych: drukarki (w³±czaj±c
+Ghostcript jest interpreterem PostScriptu, jÄ™zyku uÅ¼ywanego do opisu
+formatu dokumentu. Ghostscript potrafi przetworzyÄ‡ dokument w formacie
+PostScript i PDF na szereg postaci wyjÅ›ciowych: drukarki (wÅ‚Ä…czajÄ…c
 kolorowe), okno X-Window i popularne formaty graficzne.
 
 %prep
