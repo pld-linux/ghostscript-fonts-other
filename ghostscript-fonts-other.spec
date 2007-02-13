@@ -1,5 +1,5 @@
 Summary:	Additional ghostscript fonts
-Summary(pl.UTF-8):   Dodatkowe fonty dla interpretera ghostscript
+Summary(pl.UTF-8):	Dodatkowe fonty dla interpretera ghostscript
 Name:		ghostscript-fonts-other
 Version:	6.0
 Release:	5
