@@ -2,7 +2,7 @@ Summary:	Additional ghostscript fonts
 Summary(pl.UTF-8):	Dodatkowe fonty dla interpretera ghostscript
 Name:		ghostscript-fonts-other
 Version:	6.0
-Release:	6
+Release:	7
 License:	GPL
 Group:		Applications/Graphics
 Source0:	ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/fonts/gnu-gs-fonts-other-%{version}.tar.gz
